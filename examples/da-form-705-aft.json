@@ -1,0 +1,219 @@
+{
+  "formatVersion": "0.1.0",
+  "id": "196d0438-5456-4b02-95dc-07c75266ee94",
+  "createdAt": "2026-10-08T17:12:05Z",
+  "template": {
+    "uri": "https://forms.example.org/fillink/da-form-705-aft",
+    "version": "2026-04.1"
+  },
+  "locked": false,
+  "data": {
+    "soldier": {
+      "name": "EXAMPLE, SOLDIER",
+      "unitLocation": "EXAMPLE UNIT",
+      "sex": ""
+    },
+    "tests": [
+      {
+        "date": "",
+        "aocMos": "",
+        "payGrade": "",
+        "age": "",
+        "standard": "",
+        "deadlift": {
+          "firstAttemptMarked": false,
+          "firstAttempt": "",
+          "secondAttemptMarked": false,
+          "secondAttempt": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "pushUp": {
+          "repetitions": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "sprintDragCarry": {
+          "time": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "plank": {
+          "time": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "twoMileRun": {
+          "time": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "alternateCardio": {
+          "test": "",
+          "time": "",
+          "result": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "soldierNameTyped": "",
+        "soldierSignatureDate": "",
+        "totalPoints": "",
+        "oicName": "",
+        "oicPayGrade": "",
+        "finalResult": "",
+        "oicNameTyped": "",
+        "oicDate": ""
+      },
+      {
+        "date": "",
+        "aocMos": "",
+        "payGrade": "",
+        "age": "",
+        "standard": "",
+        "deadlift": {
+          "firstAttemptMarked": false,
+          "firstAttempt": "",
+          "secondAttemptMarked": false,
+          "secondAttempt": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "pushUp": {
+          "repetitions": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "sprintDragCarry": {
+          "time": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "plank": {
+          "time": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "twoMileRun": {
+          "time": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "alternateCardio": {
+          "test": "",
+          "time": "",
+          "result": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "soldierNameTyped": "",
+        "soldierSignatureDate": "",
+        "totalPoints": "",
+        "oicName": "",
+        "oicPayGrade": "",
+        "finalResult": "",
+        "oicNameTyped": "",
+        "oicDate": ""
+      },
+      {
+        "date": "",
+        "aocMos": "",
+        "payGrade": "",
+        "age": "",
+        "standard": "",
+        "deadlift": {
+          "firstAttemptMarked": false,
+          "firstAttempt": "",
+          "secondAttemptMarked": false,
+          "secondAttempt": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "pushUp": {
+          "repetitions": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "sprintDragCarry": {
+          "time": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "plank": {
+          "time": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "twoMileRun": {
+          "time": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "alternateCardio": {
+          "test": "",
+          "time": "",
+          "result": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "soldierNameTyped": "",
+        "soldierSignatureDate": "",
+        "totalPoints": "",
+        "oicName": "",
+        "oicPayGrade": "",
+        "finalResult": "",
+        "oicNameTyped": "",
+        "oicDate": ""
+      },
+      {
+        "date": "",
+        "aocMos": "",
+        "payGrade": "",
+        "age": "",
+        "standard": "",
+        "deadlift": {
+          "firstAttemptMarked": false,
+          "firstAttempt": "",
+          "secondAttemptMarked": false,
+          "secondAttempt": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "pushUp": {
+          "repetitions": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "sprintDragCarry": {
+          "time": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "plank": {
+          "time": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "twoMileRun": {
+          "time": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "alternateCardio": {
+          "test": "",
+          "time": "",
+          "result": "",
+          "points": "",
+          "graderInitials": ""
+        },
+        "soldierNameTyped": "",
+        "soldierSignatureDate": "",
+        "totalPoints": "",
+        "oicName": "",
+        "oicPayGrade": "",
+        "finalResult": "",
+        "oicNameTyped": "",
+        "oicDate": ""
+      }
+    ]
+  }
+}

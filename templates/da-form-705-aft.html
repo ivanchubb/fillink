@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="fillink:template-id" content="https://forms.example.org/fillink/da-form-705-aft">
+  <meta name="fillink:template-version" content="2026-04.1">
+  <meta name="fillink:form-code" content="DA705AFT">
+  <meta name="fillink:name-path" content="soldier.name">
+  <meta name="fillink:notice" content="Unofficial HTML conversion of DA Form 705-AFT, APR 2026. Use fictional data only.">
+  <meta name="fillink:legacy-paths" content="tests.*.deadlift.graderNameTyped;tests.*.pushUp.graderNameTyped;tests.*.sprintDragCarry.graderNameTyped;tests.*.plank.graderNameTyped;tests.*.twoMileRun.graderNameTyped;tests.*.alternateCardio.graderNameTyped">
+  <title>DA Form 705-AFT — Army Fitness Test Scorecard</title>
+  <style>
+/* DA Form 705-AFT scorecard layout. */
+.scorecard-heading { text-align: center; border: 1px solid #555; }
+.scorecard-heading h1 { margin: .12rem 0 .08rem; font-size: 1.25rem; }
+.scorecard-heading p { margin: .05rem 0 .2rem; font-size: .72rem; }
+.official-use { padding: .12rem; border-top: 1px solid #666; background: #ddd; font-size: .7rem; font-weight: 700; }
+.soldier-header { display: grid; grid-template-columns: 4fr 4fr 1.8fr; border: 1px solid #555; border-top: 0; }
+.header-field { padding: .18rem .3rem; font-size: .7rem; }
+.soldier-name, .soldier-unit { border-right: 1px solid #777; }
+.header-field input:not([type=radio]) { display: block; width: 100%; min-height: 1.3rem; border: 0; border-bottom: 1px solid #777; border-radius: 0; }
+.sex-field { display: flex; align-items: center; justify-content: space-evenly; gap: .25rem; }
+.sex-field legend { float: left; margin-right: .2rem; }
+.sex-field label, .standard label, .event fieldset label, .oic-row fieldset label { display: inline-flex; align-items: center; gap: .15rem; white-space: nowrap; }
+.scoring-note { margin: .2rem 0; padding: .15rem .3rem; font-size: .68rem; }
+.privacy { padding: .2rem .3rem; border: 1px solid #666; font-size: .62rem; line-height: 1.12; }
+.privacy h2 { margin: 0 0 .12rem; text-align: center; font-size: .68rem; }
+.privacy p { margin: .08rem 0; }
+.test-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .18rem; margin-top: .18rem; }
+.test { min-width: 0; padding: .12rem .18rem; border: 1px solid #444; }
+.test > legend { width: 100%; padding: .1rem; background: #ddd; text-align: center; font-weight: 700; font-size: .75rem; }
+.test-meta { display: grid; grid-template-columns: 1.2fr 1.2fr 1.2fr .7fr; border-bottom: 1px solid #777; }
+.test-meta > label, .test-meta .standard { padding: .13rem .15rem; border-right: 1px solid #aaa; font-size: .58rem; }
+.test-meta input:not([type=radio]) { display: block; width: 100%; min-width: 0; height: 1rem; border: 0; border-bottom: 1px solid #888; border-radius: 0; }
+.standard { grid-column: 1 / -1; display: flex; gap: .5rem; padding: .1rem .15rem; }
+.standard legend { float: left; margin-right: .25rem; font-weight: 700; }
+.events { display: grid; grid-template-columns: 1fr; }
+.event { min-width: 0; padding: .07rem .12rem; border-bottom: 1px solid #888; }
+.event h3 { margin: 0; padding: .06rem .1rem; background: #ddd; text-align: center; font-size: .62rem; line-height: 1.12; }
+.event h3 small { font-weight: 400; font-size: .88em; }
+.event label { min-width: 0; display: block; font-size: .55rem; }
+.event input:not([type=checkbox]), .event select, .test-total input, .oic-row input, .oic-sign input { display: block; width: 100%; min-width: 0; height: 1.05rem; padding: .05rem .12rem; border: 1px solid #77818a; border-radius: 0; font-size: .68rem; }
+.attempt-grid, .result-grid { display: grid; grid-template-columns: 1.3fr 1.3fr .8fr .9fr; gap: .12rem; padding-top: .1rem; }
+.attempt-value { display: flex; align-items: center; gap: .1rem; }
+.attempt-value input[type=checkbox] { margin: 0; }
+.attempt-value input:not([type=checkbox]) { flex: 1; min-width: 0; }
+.result-grid { grid-template-columns: 1.1fr .8fr 1fr; }
+.typed-signature { display: grid !important; grid-template-columns: max-content minmax(0, 1fr); align-items: center; gap: .2rem; margin-top: .08rem; font-size: .48rem !important; }
+.typed-signature input { height: .85rem !important; }
+.alternate-grid { display: grid; grid-template-columns: 1.2fr .8fr .9fr .8fr .9fr; gap: .1rem; align-items: end; padding-top: .1rem; }
+.alternate-grid fieldset { min-width: 0; padding: .05rem; border: 1px solid #aaa; }
+.alternate-grid legend { font-size: .5rem; }
+.alternate-grid fieldset label { display: inline-flex; align-items: center; font-size: .52rem; }
+.test-total, .oic-row, .oic-sign { display: grid; grid-template-columns: 2fr .8fr .8fr; gap: .15rem; padding: .12rem 0; }
+.test-total label, .oic-row > label, .oic-sign label { min-width: 0; font-size: .55rem; }
+.oic-row { grid-template-columns: 2fr .8fr .8fr; border-top: 1px solid #777; }
+.oic-row fieldset { padding: .05rem; font-size: .52rem; }
+.oic-row legend { font-size: .5rem; }
+.oic-sign { grid-template-columns: 2fr .8fr; border-top: 1px solid #777; }
+.form-footer { display: flex; justify-content: space-between; align-items: center; padding-top: .16rem; font-size: .57rem; }
+.repeated-header { margin-bottom: .3rem; }
+.is-locked input:disabled, .is-locked select:disabled { color: #111; opacity: 1; background-color: #f1f1f1; }
+@media (max-width: 850px) {
+  .print-page { overflow-x: auto; min-width: 760px; }
+  .toolbar { position: static; }
+}
+@media print {
+  @page { size: letter landscape; margin: .17in .2in .22in; }
+  body { margin: 0; background: white; color: #111; }
+  .demo-banner, .toolbar { display: none !important; }
+  .fillink-main { max-width: none; margin: 0; padding: 0; }
+  .fillink-form { font-size: 6pt; }
+  .print-page { position: relative; width: 100%; height: 7.95in; overflow: hidden; break-after: page; page-break-after: always; break-inside: avoid; page-break-inside: avoid; }
+  .print-page.page-two { break-before: page; page-break-before: always; }
+  .print-page:last-child { break-after: auto; page-break-after: auto; }
+  .scorecard-heading h1 { margin: 0; font-size: 10pt; }
+  .scorecard-heading p { margin: 0; font-size: 5.5pt; }
+  .official-use { padding: 1pt; font-size: 5.5pt; }
+  .header-field { padding: 1pt 3pt; font-size: 5.5pt; }
+  .header-field input:not([type=radio]) { min-height: 12pt; }
+  .scoring-note { margin: 2pt 0; padding: 1pt 3pt; font-size: 5.3pt; }
+  .privacy { padding: 2pt 3pt; font-size: 5.2pt; line-height: 1.05; }
+  .privacy h2 { margin-bottom: 1pt; font-size: 5.8pt; }
+  .privacy p { margin: 1pt 0; }
+  .test-columns { gap: 3pt; margin-top: 3pt; }
+  .test { padding: 1pt 2pt; }
+  .test > legend { padding: 1pt; font-size: 6pt; }
+  .test-meta > label, .test-meta .standard { padding: 1pt; font-size: 4.8pt; }
+  .test-meta input:not([type=radio]) { height: 9pt; }
+  .standard { gap: 4pt; padding: 1pt; }
+  .event { padding: 1pt 2pt; }
+  .event h3 { padding: 1pt; font-size: 5.1pt; line-height: 1.04; }
+  .event label { font-size: 4.6pt; }
+  .event input:not([type=checkbox]), .event select, .test-total input, .oic-row input, .oic-sign input { height: 9pt; padding: 0 1pt; font-size: 5.2pt; }
+  .attempt-grid, .result-grid, .alternate-grid { gap: 1pt; padding-top: 1pt; }
+  .attempt-value input[type=checkbox] { width: 7pt; height: 7pt; }
+  .alternate-grid fieldset { padding: 0; }
+  .alternate-grid legend, .alternate-grid fieldset label { font-size: 4.4pt; }
+  .test-total, .oic-row, .oic-sign { gap: 2pt; padding: 2pt 0; }
+  .test-total label, .oic-row > label, .oic-sign label { font-size: 4.7pt; }
+  .oic-row fieldset, .oic-row legend { font-size: 4.4pt; }
+  .form-footer { position: absolute; right: 0; bottom: 0; left: 0; z-index: 1; padding-top: 2pt; background: white; font-size: 5pt; }
+  a { color: #111; text-decoration: none; }
+  .print-page, .test, .event, .test-meta, .soldier-header, .privacy { break-inside: avoid; }
+}
+
+  </style>
+</head>
+<body>
+
+  <main class="fillink-main">
+    <form id="fillink-form" data-fillink-form class="fillink-form" autocomplete="off">
+      <section class="print-page page-one" aria-label="Scorecard page 1">
+        <header class="scorecard-heading">
+          <h1>ARMY FITNESS TEST SCORECARD</h1>
+          <p>For use of this form, see ATP 7-22.01 and associated TC 7-22.01; the proponent agency is T2COM.</p>
+          <div class="official-use">FOR OFFICIAL USE ONLY</div>
+        </header>
+        <section class="soldier-header" aria-label="Soldier information">
+          <label class="header-field soldier-name">NAME <i>(Last, First, MI)</i><input type="text" data-fillink="soldier.name"></label>
+          <label class="header-field soldier-unit">UNIT/LOCATION<input type="text" data-fillink="soldier.unitLocation"></label>
+          <fieldset class="header-field sex-field"><legend>SEX</legend>
+            <label><input type="radio" name="sex" value="male" data-fillink="soldier.sex"> MALE</label>
+            <label><input type="radio" name="sex" value="female" data-fillink="soldier.sex"> FEMALE</label>
+          </fieldset>
+        </section>
+        <p class="scoring-note"><strong>NOTE:</strong> To convert raw scores to scaled scores, refer to the AFT event score conversion tables posted to the Army Fitness Test website at: <a href="https://www.army.mil/aft" rel="noopener">https://www.army.mil/aft</a>.</p>
+        <section class="privacy" aria-labelledby="privacy-heading">
+          <h2 id="privacy-heading">PRIVACY ACT STATEMENT</h2>
+          <p><b>AUTHORITY:</b> 10 USC 7013, Department of the Army; 10 USC 671, Members not to be assigned outside United States before completing training; 10 USC 14503, Discharge of officers with less than six years of commissioned service or found not qualified for promotion to first lieutenant or lieutenant (junior grade); Army Regulation 350-1, Army Training and Leader Development.</p>
+          <p><b>PRINCIPAL PURPOSE:</b> The Army Fitness Test (AFT) assesses a Soldier's fitness capability. Fitness test standards are adjusted for combat MOS requirements, age and sex. For additional information, see the System of Records Notice DoD-005, Defense Training Records, <a href="https://www.federalregister.gov/documents/2020/12/28/2020-26548/privacy-act-of-1974-system-of-records" rel="noopener">https://www.federalregister.gov/documents/2020/12/28/2020-26548/privacy-act-of-1974-system-of-records</a>.</p>
+          <p><b>ROUTINE USES:</b> None.</p>
+          <p><b>DISCLOSURE:</b> Voluntary. However, failure to provide identifying information may prevent ability to remain in the military.</p>
+        </section>
+        <div class="test-columns">
+          <fieldset class="test" data-test="0"><legend>TEST ONE</legend>
+            <div class="test-meta">
+              <label>DATE (YYYYMMDD)<input data-fillink="tests.0.date" inputmode="numeric" pattern="[0-9]{8}" maxlength="8"></label>
+              <label>AOC/MOS<input data-fillink="tests.0.aocMos"></label>
+              <label>PAY GRADE<input data-fillink="tests.0.payGrade"></label>
+              <label>AGE<input data-fillink="tests.0.age" inputmode="numeric" pattern="[0-9]{1,3}" maxlength="3"></label>
+              <fieldset class="standard"><legend>STANDARD:</legend>
+                <label><input type="radio" name="standard-0" value="combat" data-fillink="tests.0.standard"> COMBAT</label>
+                <label><input type="radio" name="standard-0" value="general" data-fillink="tests.0.standard"> GENERAL</label>
+              </fieldset>
+            </div>
+            <div class="events">
+              <section class="event"><h3>3 REPETITION MAXIMUM DEADLIFT <small>(weight lifted - check heaviest (lbs.))</small></h3>
+                <div class="attempt-grid">
+                  <label><span>1ST ATTEMPT</span><span class="attempt-value"><input type="checkbox" aria-label="Mark first attempt" data-fillink="tests.0.deadlift.firstAttemptMarked"><input aria-label="First attempt weight in pounds" data-fillink="tests.0.deadlift.firstAttempt"></span></label>
+                  <label><span>2ND ATTEMPT</span><span class="attempt-value"><input type="checkbox" aria-label="Mark second attempt" data-fillink="tests.0.deadlift.secondAttemptMarked"><input aria-label="Second attempt weight in pounds" data-fillink="tests.0.deadlift.secondAttempt"></span></label>
+                  <label>POINTS<input data-fillink="tests.0.deadlift.points"></label>
+                  <label>GRADER INITIALS<input data-fillink="tests.0.deadlift.graderInitials"></label>
+                </div>
+                
+              </section>
+              <section class="event"><h3>HAND-RELEASE PUSH-UP <small>(number of correctly performed repetitions)</small></h3><div class="result-grid"><label>REPETITIONS<input data-fillink="tests.0.pushUp.repetitions"></label><label>POINTS<input data-fillink="tests.0.pushUp.points"></label><label>GRADER INITIALS<input data-fillink="tests.0.pushUp.graderInitials"></label></div></section>
+              <section class="event"><h3>SPRINT - DRAG - CARRY <small>(overall event time (minutes : seconds))</small></h3><div class="result-grid"><label>TIME<input data-fillink="tests.0.sprintDragCarry.time"></label><label>POINTS<input data-fillink="tests.0.sprintDragCarry.points"></label><label>GRADER INITIALS<input data-fillink="tests.0.sprintDragCarry.graderInitials"></label></div></section>
+              <section class="event"><h3>PLANK <small>(maintain proper straight line position (minutes : seconds))</small></h3><div class="result-grid"><label>TIME<input data-fillink="tests.0.plank.time"></label><label>POINTS<input data-fillink="tests.0.plank.points"></label><label>GRADER INITIALS<input data-fillink="tests.0.plank.graderInitials"></label></div></section>
+              <section class="event"><h3>2 - MILE RUN <small>(overall event time (minutes : seconds))</small></h3><div class="result-grid"><label>TIME<input data-fillink="tests.0.twoMileRun.time"></label><label>POINTS<input data-fillink="tests.0.twoMileRun.points"></label><label>GRADER INITIALS<input data-fillink="tests.0.twoMileRun.graderInitials"></label></div></section>
+              <section class="event"><h3>5K ROW / 1K SWIM / 12K BIKE / 2.5MI WALK <small>(circle or use the drop down list) (overall time to reach required distance (minutes : seconds))</small></h3><div class="alternate-grid"><label>FITNESS TEST<select data-fillink="tests.0.alternateCardio.test"><option value="">Select event</option><option value="5K Row">5K Row</option><option value="1K Swim">1K Swim</option><option value="12K Bike">12K Bike</option><option value="2.5 MI Walk">2.5 MI Walk</option></select></label><label>TIME<input data-fillink="tests.0.alternateCardio.time"></label><fieldset><legend>RESULT</legend><label><input type="radio" name="alternate-result-0" value="go" data-fillink="tests.0.alternateCardio.result"> GO</label><label><input type="radio" name="alternate-result-0" value="nogo" data-fillink="tests.0.alternateCardio.result"> NOGO</label></fieldset><label>POINTS (60/0)<input data-fillink="tests.0.alternateCardio.points" data-fillink-derived-from="tests.0.alternateCardio.result" data-fillink-derived-map="{&quot;go&quot;:&quot;60&quot;,&quot;nogo&quot;:&quot;0&quot;}" readonly aria-readonly="true"></label><label>GRADER INITIALS<input data-fillink="tests.0.alternateCardio.graderInitials"></label></div></section>
+            </div>
+            <div class="test-total"><label>SOLDIER SIGNATURE (typed name; not a digital signature)<input data-fillink="tests.0.soldierNameTyped"></label><label>DATE (YYYYMMDD)<input data-fillink="tests.0.soldierSignatureDate" inputmode="numeric" pattern="[0-9]{8}" maxlength="8"></label><label>TOTAL POINTS<input data-fillink="tests.0.totalPoints"></label></div>
+            <div class="oic-row"><label>OIC/NCOIC NAME <i>(Last, First, MI)</i><input data-fillink="tests.0.oicName"></label><label>PAY GRADE<input data-fillink="tests.0.oicPayGrade"></label><fieldset><legend>RESULT</legend><label><input type="radio" name="final-result-0" value="go" data-fillink="tests.0.finalResult"> GO</label><label><input type="radio" name="final-result-0" value="nogo" data-fillink="tests.0.finalResult"> NOGO</label></fieldset></div>
+            <div class="oic-sign"><label>OIC/NCOIC SIGNATURE (typed name; not a digital signature)<input data-fillink="tests.0.oicNameTyped"></label><label>DATE (YYYYMMDD)<input data-fillink="tests.0.oicDate" inputmode="numeric" pattern="[0-9]{8}" maxlength="8"></label></div>
+          </fieldset>
+
+          <fieldset class="test" data-test="1"><legend>TEST TWO</legend>
+            <div class="test-meta"><label>DATE (YYYYMMDD)<input data-fillink="tests.1.date" inputmode="numeric" pattern="[0-9]{8}" maxlength="8"></label><label>AOC/MOS<input data-fillink="tests.1.aocMos"></label><label>PAY GRADE<input data-fillink="tests.1.payGrade"></label><label>AGE<input data-fillink="tests.1.age" inputmode="numeric" pattern="[0-9]{1,3}" maxlength="3"></label><fieldset class="standard"><legend>STANDARD:</legend><label><input type="radio" name="standard-1" value="combat" data-fillink="tests.1.standard"> COMBAT</label><label><input type="radio" name="standard-1" value="general" data-fillink="tests.1.standard"> GENERAL</label></fieldset></div>
+            <div class="events">
+              <section class="event"><h3>3 REPETITION MAXIMUM DEADLIFT <small>(weight lifted - check heaviest (lbs.))</small></h3><div class="attempt-grid"><label><span>1ST ATTEMPT</span><span class="attempt-value"><input type="checkbox" aria-label="Mark first attempt" data-fillink="tests.1.deadlift.firstAttemptMarked"><input aria-label="First attempt weight in pounds" data-fillink="tests.1.deadlift.firstAttempt"></span></label><label><span>2ND ATTEMPT</span><span class="attempt-value"><input type="checkbox" aria-label="Mark second attempt" data-fillink="tests.1.deadlift.secondAttemptMarked"><input aria-label="Second attempt weight in pounds" data-fillink="tests.1.deadlift.secondAttempt"></span></label><label>POINTS<input data-fillink="tests.1.deadlift.points"></label><label>GRADER INITIALS<input data-fillink="tests.1.deadlift.graderInitials"></label></div></section>
+              <section class="event"><h3>HAND-RELEASE PUSH-UP <small>(number of correctly performed repetitions)</small></h3><div class="result-grid"><label>REPETITIONS<input data-fillink="tests.1.pushUp.repetitions"></label><label>POINTS<input data-fillink="tests.1.pushUp.points"></label><label>GRADER INITIALS<input data-fillink="tests.1.pushUp.graderInitials"></label></div></section>
+              <section class="event"><h3>SPRINT - DRAG - CARRY <small>(overall event time (minutes : seconds))</small></h3><div class="result-grid"><label>TIME<input data-fillink="tests.1.sprintDragCarry.time"></label><label>POINTS<input data-fillink="tests.1.sprintDragCarry.points"></label><label>GRADER INITIALS<input data-fillink="tests.1.sprintDragCarry.graderInitials"></label></div></section>
+              <section class="event"><h3>PLANK <small>(maintain proper straight line position (minutes : seconds))</small></h3><div class="result-grid"><label>TIME<input data-fillink="tests.1.plank.time"></label><label>POINTS<input data-fillink="tests.1.plank.points"></label><label>GRADER INITIALS<input data-fillink="tests.1.plank.graderInitials"></label></div></section>
+              <section class="event"><h3>2 - MILE RUN <small>(overall event time (minutes : seconds))</small></h3><div class="result-grid"><label>TIME<input data-fillink="tests.1.twoMileRun.time"></label><label>POINTS<input data-fillink="tests.1.twoMileRun.points"></label><label>GRADER INITIALS<input data-fillink="tests.1.twoMileRun.graderInitials"></label></div></section>
+              <section class="event"><h3>5K ROW / 1K SWIM / 12K BIKE / 2.5MI WALK <small>(circle or use the drop down list) (overall time to reach required distance (minutes : seconds))</small></h3><div class="alternate-grid"><label>FITNESS TEST<select data-fillink="tests.1.alternateCardio.test"><option value="">Select event</option><option value="5K Row">5K Row</option><option value="1K Swim">1K Swim</option><option value="12K Bike">12K Bike</option><option value="2.5 MI Walk">2.5 MI Walk</option></select></label><label>TIME<input data-fillink="tests.1.alternateCardio.time"></label><fieldset><legend>RESULT</legend><label><input type="radio" name="alternate-result-1" value="go" data-fillink="tests.1.alternateCardio.result"> GO</label><label><input type="radio" name="alternate-result-1" value="nogo" data-fillink="tests.1.alternateCardio.result"> NOGO</label></fieldset><label>POINTS (60/0)<input data-fillink="tests.1.alternateCardio.points" data-fillink-derived-from="tests.1.alternateCardio.result" data-fillink-derived-map="{&quot;go&quot;:&quot;60&quot;,&quot;nogo&quot;:&quot;0&quot;}" readonly aria-readonly="true"></label><label>GRADER INITIALS<input data-fillink="tests.1.alternateCardio.graderInitials"></label></div></section>
+            </div>
+            <div class="test-total"><label>SOLDIER SIGNATURE (typed name; not a digital signature)<input data-fillink="tests.1.soldierNameTyped"></label><label>DATE (YYYYMMDD)<input data-fillink="tests.1.soldierSignatureDate" inputmode="numeric" pattern="[0-9]{8}" maxlength="8"></label><label>TOTAL POINTS<input data-fillink="tests.1.totalPoints"></label></div>
+            <div class="oic-row"><label>OIC/NCOIC NAME <i>(Last, First, MI)</i><input data-fillink="tests.1.oicName"></label><label>PAY GRADE<input data-fillink="tests.1.oicPayGrade"></label><fieldset><legend>RESULT</legend><label><input type="radio" name="final-result-1" value="go" data-fillink="tests.1.finalResult"> GO</label><label><input type="radio" name="final-result-1" value="nogo" data-fillink="tests.1.finalResult"> NOGO</label></fieldset></div>
+            <div class="oic-sign"><label>OIC/NCOIC SIGNATURE (typed name; not a digital signature)<input data-fillink="tests.1.oicNameTyped"></label><label>DATE (YYYYMMDD)<input data-fillink="tests.1.oicDate" inputmode="numeric" pattern="[0-9]{8}" maxlength="8"></label></div>
+          </fieldset>
+        </div>
+        <footer class="form-footer"><strong>DA FORM 705-AFT, APR 2026</strong><span>PREVIOUS EDITIONS ARE OBSOLETE.</span><span>PAGE 1 OF 2</span></footer>
+      </section>
+
+      <section class="print-page page-two" aria-label="Scorecard page 2">
+        <header class="scorecard-heading">
+          <h1>ARMY FITNESS TEST SCORECARD</h1>
+          <p>For use of this form, see ATP 7-22.01 and associated TC 7-22.01; the proponent agency is T2COM.</p>
+          <div class="official-use">FOR OFFICIAL USE ONLY</div>
+        </header>
+        <section class="soldier-header repeated-header" aria-label="Soldier information">
+          <label class="header-field soldier-name">NAME <i>(Last, First, MI)</i><input type="text" data-fillink="soldier.name"></label>
+          <label class="header-field soldier-unit">UNIT/LOCATION<input type="text" data-fillink="soldier.unitLocation"></label>
+          <fieldset class="header-field sex-field"><legend>SEX</legend><label><input type="radio" name="sex-copy" value="male" data-fillink="soldier.sex"> MALE</label><label><input type="radio" name="sex-copy" value="female" data-fillink="soldier.sex"> FEMALE</label></fieldset>
+        </section>
+        <p class="scoring-note"><strong>NOTE:</strong> To convert raw scores to scaled scores, refer to the AFT event score conversion tables posted to the Army Fitness Test website at: <a href="https://www.army.mil/aft" rel="noopener">https://www.army.mil/aft</a>.</p>
+        <section class="privacy" aria-labelledby="privacy-heading-2">
+          <h2 id="privacy-heading-2">PRIVACY ACT STATEMENT</h2>
+          <p><b>AUTHORITY:</b> 10 USC 7013, Department of the Army; 10 USC 671, Members not to be assigned outside United States before completing training; 10 USC 14503, Discharge of officers with less than six years of commissioned service or found not qualified for promotion to first lieutenant or lieutenant (junior grade); Army Regulation 350-1, Army Training and Leader Development.</p>
+          <p><b>PRINCIPAL PURPOSE:</b> The Army Fitness Test (AFT) assesses a Soldier's fitness capability. Fitness test standards are adjusted for combat MOS requirements, age and sex. For additional information, see the System of Records Notice DoD-005, Defense Training Records, <a href="https://www.federalregister.gov/documents/2020/12/28/2020-26548/privacy-act-of-1974-system-of-records" rel="noopener">https://www.federalregister.gov/documents/2020/12/28/2020-26548/privacy-act-of-1974-system-of-records</a>.</p>
+          <p><b>ROUTINE USES:</b> None.</p>
+          <p><b>DISCLOSURE:</b> Voluntary. However, failure to provide identifying information may prevent ability to remain in the military.</p>
+        </section>
+        <div class="test-columns page-two-tests">
+          <fieldset class="test" data-test="2"><legend>TEST THREE</legend>
+            <div class="test-meta"><label>DATE (YYYYMMDD)<input data-fillink="tests.2.date" inputmode="numeric" pattern="[0-9]{8}" maxlength="8"></label><label>AOC/MOS<input data-fillink="tests.2.aocMos"></label><label>PAY GRADE<input data-fillink="tests.2.payGrade"></label><label>AGE<input data-fillink="tests.2.age" inputmode="numeric" pattern="[0-9]{1,3}" maxlength="3"></label><fieldset class="standard"><legend>STANDARD:</legend><label><input type="radio" name="standard-2" value="combat" data-fillink="tests.2.standard"> COMBAT</label><label><input type="radio" name="standard-2" value="general" data-fillink="tests.2.standard"> GENERAL</label></fieldset></div>
+            <div class="events">
+              <section class="event"><h3>3 REPETITION MAXIMUM DEADLIFT <small>(weight lifted - check heaviest (lbs.))</small></h3><div class="attempt-grid"><label><span>1ST ATTEMPT</span><span class="attempt-value"><input type="checkbox" aria-label="Mark first attempt" data-fillink="tests.2.deadlift.firstAttemptMarked"><input aria-label="First attempt weight in pounds" data-fillink="tests.2.deadlift.firstAttempt"></span></label><label><span>2ND ATTEMPT</span><span class="attempt-value"><input type="checkbox" aria-label="Mark second attempt" data-fillink="tests.2.deadlift.secondAttemptMarked"><input aria-label="Second attempt weight in pounds" data-fillink="tests.2.deadlift.secondAttempt"></span></label><label>POINTS<input data-fillink="tests.2.deadlift.points"></label><label>GRADER INITIALS<input data-fillink="tests.2.deadlift.graderInitials"></label></div></section>
+              <section class="event"><h3>HAND-RELEASE PUSH-UP <small>(number of correctly performed repetitions)</small></h3><div class="result-grid"><label>REPETITIONS<input data-fillink="tests.2.pushUp.repetitions"></label><label>POINTS<input data-fillink="tests.2.pushUp.points"></label><label>GRADER INITIALS<input data-fillink="tests.2.pushUp.graderInitials"></label></div></section>
+              <section class="event"><h3>SPRINT - DRAG - CARRY <small>(overall event time (minutes : seconds))</small></h3><div class="result-grid"><label>TIME<input data-fillink="tests.2.sprintDragCarry.time"></label><label>POINTS<input data-fillink="tests.2.sprintDragCarry.points"></label><label>GRADER INITIALS<input data-fillink="tests.2.sprintDragCarry.graderInitials"></label></div></section>
+              <section class="event"><h3>PLANK <small>(maintain proper straight line position (minutes : seconds))</small></h3><div class="result-grid"><label>TIME<input data-fillink="tests.2.plank.time"></label><label>POINTS<input data-fillink="tests.2.plank.points"></label><label>GRADER INITIALS<input data-fillink="tests.2.plank.graderInitials"></label></div></section>
+              <section class="event"><h3>2 - MILE RUN <small>(overall event time (minutes : seconds))</small></h3><div class="result-grid"><label>TIME<input data-fillink="tests.2.twoMileRun.time"></label><label>POINTS<input data-fillink="tests.2.twoMileRun.points"></label><label>GRADER INITIALS<input data-fillink="tests.2.twoMileRun.graderInitials"></label></div></section>
+              <section class="event"><h3>5K ROW / 1K SWIM / 12K BIKE / 2.5MI WALK <small>(circle or use the drop down list) (overall time to reach required distance (minutes : seconds))</small></h3><div class="alternate-grid"><label>FITNESS TEST<select data-fillink="tests.2.alternateCardio.test"><option value="">Select event</option><option value="5K Row">5K Row</option><option value="1K Swim">1K Swim</option><option value="12K Bike">12K Bike</option><option value="2.5 MI Walk">2.5 MI Walk</option></select></label><label>TIME<input data-fillink="tests.2.alternateCardio.time"></label><fieldset><legend>RESULT</legend><label><input type="radio" name="alternate-result-2" value="go" data-fillink="tests.2.alternateCardio.result"> GO</label><label><input type="radio" name="alternate-result-2" value="nogo" data-fillink="tests.2.alternateCardio.result"> NOGO</label></fieldset><label>POINTS (60/0)<input data-fillink="tests.2.alternateCardio.points" data-fillink-derived-from="tests.2.alternateCardio.result" data-fillink-derived-map="{&quot;go&quot;:&quot;60&quot;,&quot;nogo&quot;:&quot;0&quot;}" readonly aria-readonly="true"></label><label>GRADER INITIALS<input data-fillink="tests.2.alternateCardio.graderInitials"></label></div></section>
+            </div>
+            <div class="test-total"><label>SOLDIER SIGNATURE (typed name; not a digital signature)<input data-fillink="tests.2.soldierNameTyped"></label><label>DATE (YYYYMMDD)<input data-fillink="tests.2.soldierSignatureDate" inputmode="numeric" pattern="[0-9]{8}" maxlength="8"></label><label>TOTAL POINTS<input data-fillink="tests.2.totalPoints"></label></div>
+            <div class="oic-row"><label>OIC/NCOIC NAME <i>(Last, First, MI)</i><input data-fillink="tests.2.oicName"></label><label>PAY GRADE<input data-fillink="tests.2.oicPayGrade"></label><fieldset><legend>RESULT</legend><label><input type="radio" name="final-result-2" value="go" data-fillink="tests.2.finalResult"> GO</label><label><input type="radio" name="final-result-2" value="nogo" data-fillink="tests.2.finalResult"> NOGO</label></fieldset></div>
+            <div class="oic-sign"><label>OIC/NCOIC SIGNATURE (typed name; not a digital signature)<input data-fillink="tests.2.oicNameTyped"></label><label>DATE (YYYYMMDD)<input data-fillink="tests.2.oicDate" inputmode="numeric" pattern="[0-9]{8}" maxlength="8"></label></div>
+          </fieldset>
+          <fieldset class="test" data-test="3"><legend>TEST FOUR</legend>
+            <div class="test-meta"><label>DATE (YYYYMMDD)<input data-fillink="tests.3.date" inputmode="numeric" pattern="[0-9]{8}" maxlength="8"></label><label>AOC/MOS<input data-fillink="tests.3.aocMos"></label><label>PAY GRADE<input data-fillink="tests.3.payGrade"></label><label>AGE<input data-fillink="tests.3.age" inputmode="numeric" pattern="[0-9]{1,3}" maxlength="3"></label><fieldset class="standard"><legend>STANDARD:</legend><label><input type="radio" name="standard-3" value="combat" data-fillink="tests.3.standard"> COMBAT</label><label><input type="radio" name="standard-3" value="general" data-fillink="tests.3.standard"> GENERAL</label></fieldset></div>
+            <div class="events">
+              <section class="event"><h3>3 REPETITION MAXIMUM DEADLIFT <small>(weight lifted - check heaviest (lbs.))</small></h3><div class="attempt-grid"><label><span>1ST ATTEMPT</span><span class="attempt-value"><input type="checkbox" aria-label="Mark first attempt" data-fillink="tests.3.deadlift.firstAttemptMarked"><input aria-label="First attempt weight in pounds" data-fillink="tests.3.deadlift.firstAttempt"></span></label><label><span>2ND ATTEMPT</span><span class="attempt-value"><input type="checkbox" aria-label="Mark second attempt" data-fillink="tests.3.deadlift.secondAttemptMarked"><input aria-label="Second attempt weight in pounds" data-fillink="tests.3.deadlift.secondAttempt"></span></label><label>POINTS<input data-fillink="tests.3.deadlift.points"></label><label>GRADER INITIALS<input data-fillink="tests.3.deadlift.graderInitials"></label></div></section>
+              <section class="event"><h3>HAND-RELEASE PUSH-UP <small>(number of correctly performed repetitions)</small></h3><div class="result-grid"><label>REPETITIONS<input data-fillink="tests.3.pushUp.repetitions"></label><label>POINTS<input data-fillink="tests.3.pushUp.points"></label><label>GRADER INITIALS<input data-fillink="tests.3.pushUp.graderInitials"></label></div></section>
+              <section class="event"><h3>SPRINT - DRAG - CARRY <small>(overall event time (minutes : seconds))</small></h3><div class="result-grid"><label>TIME<input data-fillink="tests.3.sprintDragCarry.time"></label><label>POINTS<input data-fillink="tests.3.sprintDragCarry.points"></label><label>GRADER INITIALS<input data-fillink="tests.3.sprintDragCarry.graderInitials"></label></div></section>
+              <section class="event"><h3>PLANK <small>(maintain proper straight line position (minutes : seconds))</small></h3><div class="result-grid"><label>TIME<input data-fillink="tests.3.plank.time"></label><label>POINTS<input data-fillink="tests.3.plank.points"></label><label>GRADER INITIALS<input data-fillink="tests.3.plank.graderInitials"></label></div></section>
+              <section class="event"><h3>2 - MILE RUN <small>(overall event time (minutes : seconds))</small></h3><div class="result-grid"><label>TIME<input data-fillink="tests.3.twoMileRun.time"></label><label>POINTS<input data-fillink="tests.3.twoMileRun.points"></label><label>GRADER INITIALS<input data-fillink="tests.3.twoMileRun.graderInitials"></label></div></section>
+              <section class="event"><h3>5K ROW / 1K SWIM / 12K BIKE / 2.5MI WALK <small>(circle or use the drop down list) (overall time to reach required distance (minutes : seconds))</small></h3><div class="alternate-grid"><label>FITNESS TEST<select data-fillink="tests.3.alternateCardio.test"><option value="">Select event</option><option value="5K Row">5K Row</option><option value="1K Swim">1K Swim</option><option value="12K Bike">12K Bike</option><option value="2.5 MI Walk">2.5 MI Walk</option></select></label><label>TIME<input data-fillink="tests.3.alternateCardio.time"></label><fieldset><legend>RESULT</legend><label><input type="radio" name="alternate-result-3" value="go" data-fillink="tests.3.alternateCardio.result"> GO</label><label><input type="radio" name="alternate-result-3" value="nogo" data-fillink="tests.3.alternateCardio.result"> NOGO</label></fieldset><label>POINTS (60/0)<input data-fillink="tests.3.alternateCardio.points" data-fillink-derived-from="tests.3.alternateCardio.result" data-fillink-derived-map="{&quot;go&quot;:&quot;60&quot;,&quot;nogo&quot;:&quot;0&quot;}" readonly aria-readonly="true"></label><label>GRADER INITIALS<input data-fillink="tests.3.alternateCardio.graderInitials"></label></div></section>
+            </div>
+            <div class="test-total"><label>SOLDIER SIGNATURE (typed name; not a digital signature)<input data-fillink="tests.3.soldierNameTyped"></label><label>DATE (YYYYMMDD)<input data-fillink="tests.3.soldierSignatureDate" inputmode="numeric" pattern="[0-9]{8}" maxlength="8"></label><label>TOTAL POINTS<input data-fillink="tests.3.totalPoints"></label></div>
+            <div class="oic-row"><label>OIC/NCOIC NAME <i>(Last, First, MI)</i><input data-fillink="tests.3.oicName"></label><label>PAY GRADE<input data-fillink="tests.3.oicPayGrade"></label><fieldset><legend>RESULT</legend><label><input type="radio" name="final-result-3" value="go" data-fillink="tests.3.finalResult"> GO</label><label><input type="radio" name="final-result-3" value="nogo" data-fillink="tests.3.finalResult"> NOGO</label></fieldset></div>
+            <div class="oic-sign"><label>OIC/NCOIC SIGNATURE (typed name; not a digital signature)<input data-fillink="tests.3.oicNameTyped"></label><label>DATE (YYYYMMDD)<input data-fillink="tests.3.oicDate" inputmode="numeric" pattern="[0-9]{8}" maxlength="8"></label></div>
+          </fieldset>
+        </div>
+        <footer class="form-footer"><strong>DA FORM 705-AFT, APR 2026</strong><span>PREVIOUS EDITIONS ARE OBSOLETE.</span><span>PAGE 2 OF 2</span></footer>
+      </section>
+    </form>
+  </main>
+</body>
+</html>

@@ -1,0 +1,62 @@
+/* Common Fillink styling for the app and its self-contained HTML templates. */
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #18212b;
+  background: #eef1f4;
+  --fillink-ink: #18212b;
+  --fillink-accent: #164b75;
+  --fillink-border: #89939c;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+.demo-banner { display: flex; gap: .75rem; align-items: baseline; padding: .7rem max(1rem, calc((100% - 1100px) / 2)); background: #15334b; color: white; font-size: .9rem; }
+.toolbar { position: sticky; z-index: 2; top: 0; display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; padding: .65rem max(1rem, calc((100% - 1100px) / 2)); border-bottom: 1px solid #c8d0d9; background: #fff; box-shadow: 0 2px 5px #0001; }
+button, .button-label { display: inline-block; padding: .45rem .8rem; border: 1px solid #617386; border-radius: .25rem; color: #18344b; background: white; font: inherit; cursor: pointer; }
+button:hover, .button-label:hover { background: #edf4fa; }
+button:disabled { cursor: not-allowed; opacity: .55; }
+#load-submission { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+#form-status { margin-left: auto; color: #345; }
+.fillink-main { max-width: 1100px; margin: 1.25rem auto 3rem; padding: 0 1rem; }
+.fillink-form { padding: clamp(1rem, 3vw, 2rem); border: 1px solid #8b9299; background: white; box-shadow: 0 3px 16px #16233018; }
+.fillink-form.is-locked { border-color: #9a6724; }
+.form-heading { text-align: center; padding-bottom: .6rem; border-bottom: 2px solid #202830; }
+.form-heading h1 { margin: .2rem 0; font-size: clamp(1.15rem, 2.5vw, 1.65rem); line-height: 1.15; }
+.form-heading p { margin: .25rem 0; font-size: .85rem; }
+h2 { font-size: 1rem; margin: 0 0 .5rem; }
+a { color: #0645ad; }
+.field, .choice-fieldset { min-width: 0; margin: 0; padding: .45rem; border: 1px solid #9da5ac; font-size: .82rem; }
+.field { display: flex; flex-direction: column; gap: .28rem; }
+.field input, .field textarea, .field select { width: 100%; min-width: 0; border: 0; border-bottom: 1px solid #73808b; padding: .25rem .15rem; color: inherit; background: transparent; font: inherit; }
+.field input:focus, .field textarea:focus, .field select:focus, .fillink-table input:focus { outline: 2px solid #3578b5; outline-offset: 1px; }
+.choice-fieldset { display: flex; flex-direction: column; }
+.choice-fieldset legend { padding: 0 .2rem; }
+.choice-row { display: flex; flex-wrap: wrap; gap: .5rem .9rem; align-items: center; padding: .25rem; }
+.choice-row label { display: inline-flex; align-items: center; gap: .22rem; white-space: nowrap; }
+.choice-row input { margin: 0; accent-color: var(--fillink-accent); }
+.fillink-table-wrap { overflow-x: auto; }
+.fillink-table { width: 100%; border-collapse: collapse; font-size: .78rem; }
+.fillink-table th, .fillink-table td { border: 1px solid var(--fillink-border); padding: .25rem; }
+.fillink-table thead th { text-align: center; font-weight: 600; }
+.fillink-table td input { width: 100%; min-width: 5rem; border: 0; padding: .3rem .15rem; font: inherit; }
+.fillink-table td input[type="checkbox"] { display: block; width: 1rem; min-width: 1rem; height: 1rem; margin: .25rem auto; padding: 0; accent-color: var(--fillink-accent); }
+.signatures { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.signature-block { min-width: 0; padding: .6rem; border: 1px solid var(--fillink-border); }
+.signature-block h2 { min-height: 2.2rem; }
+.signature-status { min-height: 2.5rem; color: #7b3e00; font-size: .82rem; }
+.signature-block label { display: flex; flex-direction: column; gap: .2rem; margin-top: .6rem; font-size: .82rem; }
+.signature-block label input { padding: .35rem; border: 0; border-bottom: 1px solid #445; font: inherit; }
+.form-footer { display: flex; justify-content: space-between; gap: .5rem; padding-top: .6rem; font-size: .75rem; }
+@media (max-width: 720px) {
+  .signatures { grid-template-columns: 1fr; }
+  .form-footer { flex-wrap: wrap; }
+}
+@media print {
+  :root { background: white; }
+  .demo-banner, .toolbar { display: none !important; }
+  .fillink-main { max-width: none; margin: 0; padding: 0; }
+  .fillink-form { padding: 0; border: 0; box-shadow: none; }
+  .form-footer { position: fixed; right: 0; bottom: 0; left: 0; z-index: 10; background: white; }
+  input, textarea, select { print-color-adjust: exact; }
+  @page { size: letter portrait; margin: .4in; }
+}

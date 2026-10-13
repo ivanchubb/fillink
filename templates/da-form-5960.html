@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="fillink:template-id" content="https://forms.example.org/fillink/da-form-5960">
+  <meta name="fillink:template-version" content="2022-01.1">
+  <meta name="fillink:form-code" content="DA5960">
+  <meta name="fillink:name-path" content="member.name">
+  <meta name="fillink:notice" content="Unofficial HTML recreation of DA Form 5960, JAN 2022. Use fictional data only.">
+  <title>DA Form 5960 — BAH Authorization and Dependency Declaration</title>
+  <style>
+/* DA Form 5960-specific print and table layout. */
+.form-number { font-weight: 700; letter-spacing: .08em; }
+.privacy { padding: .7rem 0; border-bottom: 1px solid #727b84; font-size: .79rem; line-height: 1.35; }
+.privacy h2 { text-align: center; text-transform: uppercase; }
+.privacy p { margin: .25rem 0; }
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.member-grid { border-top: 1px solid #66717a; }
+.span-2 { grid-column: span 2; }
+.spouse-section, .dependents-section, .certification, .attestation, .signatures { padding-top: .75rem; border-top: 1px solid #66717a; }
+.spouse-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.dependents-section > p { margin: -.2rem 0 .5rem; font-size: .82rem; }
+.fillink-table tbody th { width: 2rem; text-align: center; }
+.certification h2 { margin-bottom: .35rem; }
+.cert-row { display: grid; grid-template-columns: 2.4rem minmax(0, 1fr); gap: .5rem; align-items: center; padding: .25rem 0; font-size: .78rem; }
+.cert-row p { margin: 0; }
+.cert-row .initial-field { width: 2.4rem; min-width: 2.4rem; height: 1.6rem; border: 1px solid #596a79; border-radius: .15rem; text-align: center; font: inherit; text-transform: uppercase; }
+.attestation { font-size: .82rem; }
+.attestation p { margin: .45rem 0; }
+@media (max-width: 720px) {
+  .grid, .spouse-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .member-grid .span-2 { grid-column: span 2; }
+  .cert-row { grid-template-columns: 2.4rem minmax(0, 1fr); }
+}
+
+@media print {
+  @page { size: letter portrait; margin: .2in .25in .45in; }
+  .fillink-form { font-size: 7pt; }
+  .form-heading { padding-bottom: 2pt; }
+  .form-heading h1 { margin: 1pt 0; font-size: 10pt; }
+  .form-heading p { margin: 1pt 0; font-size: 6pt; }
+  h2 { margin-bottom: 2pt; font-size: 7pt; }
+  .privacy { padding: 2pt 0; font-size: 6pt; line-height: 1.08; }
+  .privacy p { margin: 1pt 0; }
+  .field, .choice-fieldset { padding: 2pt; font-size: 6.5pt; }
+  .field input, .field textarea, .field select { padding: 1pt; font-size: 6.5pt; }
+  .choice-row { gap: 2pt 5pt; padding: 1pt; }
+  .spouse-section, .dependents-section, .certification, .attestation, .signatures { padding-top: 3pt; }
+  .dependents-section > p { margin: 0 0 2pt; font-size: 6pt; }
+  .fillink-table { font-size: 5.5pt; }
+  .fillink-table th, .fillink-table td { padding: 1pt; }
+  .fillink-table td input { min-width: 0; padding: 1pt; font-size: 6pt; }
+  .fillink-table td input[type="checkbox"] { min-width: 9pt; width: 9pt; height: 9pt; margin: 0 auto; }
+  .cert-row { grid-template-columns: 20pt minmax(0, 1fr); gap: 3pt; padding: 1pt 0; font-size: 5.5pt; line-height: 1.05; }
+  .cert-row .initial-field { width: 20pt; min-width: 20pt; height: 12pt; padding: 0; }
+  .attestation { font-size: 6pt; line-height: 1.1; }
+  .attestation p { margin: 2pt 0; }
+  .signatures { gap: 4pt; }
+  .signature-block { padding: 3pt; }
+  .signature-block h2 { min-height: 0; }
+  .signature-status { min-height: 0; margin: 1pt 0; font-size: 5.5pt; }
+  .signature-block button { display: none; }
+  .signature-block label { gap: 1pt; margin-top: 2pt; font-size: 6pt; }
+  .signature-block label input { padding: 1pt; }
+  .form-footer { padding-top: 3pt; font-size: 6pt; }
+  .privacy, .field, .choice-fieldset, .attestation, .signatures, tr { break-inside: avoid; }
+}
+
+  </style>
+</head>
+<body>
+
+
+  <main class="fillink-main">
+    <form id="fillink-form" data-fillink-form class="fillink-form" autocomplete="off">
+      <header class="form-heading">
+        <p class="form-number">DEPARTMENT OF THE ARMY</p>
+        <h1>BASIC ALLOWANCE FOR HOUSING (BAH)<br>AUTHORIZATION AND DEPENDENCY DECLARATION</h1>
+        <p>For use of this form, see AR 637-1. The proponent agency is DCS, G-1.</p>
+      </header>
+
+      <section class="privacy" aria-labelledby="privacy-heading">
+        <h2 id="privacy-heading">Privacy Act Statement</h2>
+        <p><b>Authority:</b> 37 USC 403, Basic allowance housing; Army Regulation 637-1, Army Military Compensation and Entitlement Policy.</p>
+        <p><b>Principal purpose:</b> To start, adjust or terminate a Soldier's entitlement to basic allowance for housing (BAH) and to verify a Soldier's dependency status. For additional information see the System of Records Notice A0600-8-104 APS <a href="https://www.federalregister.gov/documents/2019/07/18/2019-15242/privacy-act-of-1974-system-of-records" rel="noopener">Privacy Act System of Records Notice</a>.</p>
+        <p><b>Routine uses:</b> To the Internal Revenue Service for tax purposes. To the U.S. Government Accountability Office for statistical management. To members of Congress for inquiries. To U.S. state courts and various law enforcement agencies by subpoena only.</p>
+        <p><b>Disclosure:</b> Voluntary; however, form will not be processed without your DoD ID for pay purposes and nondisclosure may result in discrepancies with your BAH.</p>
+      </section>
+
+      <section class="member-section" aria-label="Member and action information">
+        <div class="grid member-grid">
+          <label class="field span-2">1. Name (Last, First, MI)
+            <input type="text" data-fillink="member.name" autocomplete="off">
+          </label>
+          <label class="field">2. DoD ID Number
+            <input type="text" data-fillink="member.dodId" data-fillink-digits="10" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" autocomplete="off" required title="Enter the 10-digit DoD ID without spaces or punctuation.">
+          </label>
+          <label class="field">3. Grade
+            <select data-fillink="member.grade">
+              <option value="">Select grade</option>
+              <optgroup label="Officer">
+                <option>O1</option><option>O2</option><option>O3</option><option>O4</option><option>O5</option><option>O6</option><option>O7</option><option>O8</option><option>O9</option><option>O10</option>
+              </optgroup>
+              <optgroup label="Enlisted">
+                <option>E1</option><option>E2</option><option>E3</option><option>E4</option><option>E5</option><option>E6</option><option>E7</option><option>E8</option><option>E9</option>
+              </optgroup>
+              <optgroup label="Warrant Officer">
+                <option>W1</option><option>W2</option><option>W3</option><option>W4</option><option>W5</option>
+              </optgroup>
+            </select>
+          </label>
+          <label class="field span-2">4. Member's Physical Address (Street, City, State, and Zip Code)
+            <input type="text" data-fillink="member.physicalAddress" autocomplete="street-address">
+          </label>
+          <label class="field span-2">5. Duty Location (Unit Location or City, State, and Zip Code)
+            <input type="text" data-fillink="member.dutyLocation" autocomplete="off">
+          </label>
+          <label class="field">6. Effective Date of Action (YYYYMMDD)
+            <input type="text" data-fillink="member.effectiveDate" inputmode="numeric" pattern="[0-9]{8}" maxlength="8" placeholder="YYYYMMDD">
+          </label>
+          <fieldset class="choice-fieldset">
+            <legend>7. Type of Action (Select Only One)</legend>
+            <div class="choice-row">
+              <label><input type="radio" name="actionType" value="start" data-fillink="actionType"> Start</label>
+              <label><input type="radio" name="actionType" value="change" data-fillink="actionType"> Change</label>
+              <label><input type="radio" name="actionType" value="stop" data-fillink="actionType"> Stop</label>
+              <label><input type="radio" name="actionType" value="recertify" data-fillink="actionType"> Recertify</label>
+            </div>
+          </fieldset>
+          <fieldset class="choice-fieldset">
+            <legend>8. BAH Type (Select Only One)</legend>
+            <div class="choice-row">
+              <label><input type="radio" name="bahType" value="withDependents" data-fillink="bahType"> With Dependents</label>
+              <label><input type="radio" name="bahType" value="withoutDependents" data-fillink="bahType"> Without Dependents</label>
+              <label><input type="radio" name="bahType" value="differential" data-fillink="bahType"> Differential</label>
+            </div>
+          </fieldset>
+          <fieldset class="choice-fieldset span-2">
+            <legend>9. Marital Status (Select Only One)</legend>
+            <div class="choice-row">
+              <label><input type="radio" name="maritalStatus" value="single" data-fillink="maritalStatus"> Single</label>
+              <label><input type="radio" name="maritalStatus" value="married" data-fillink="maritalStatus"> Married</label>
+              <label><input type="radio" name="maritalStatus" value="divorced" data-fillink="maritalStatus"> Divorced</label>
+              <label><input type="radio" name="maritalStatus" value="legallySeparated" data-fillink="maritalStatus"> Legally Separated</label>
+              <label><input type="radio" name="maritalStatus" value="widowed" data-fillink="maritalStatus"> Widowed</label>
+            </div>
+          </fieldset>
+        </div>
+      </section>
+
+      <section class="spouse-section" aria-label="Spouse information">
+        <div class="grid spouse-grid">
+          <label class="field">10. Spouse's Name (Last, First, MI)
+            <input type="text" data-fillink="spouse.name" autocomplete="off">
+          </label>
+          <label class="field">11. Spouse's Physical Address (Street, City, State, and Zip Code)
+            <textarea data-fillink="spouse.physicalAddress" rows="3" autocomplete="off"></textarea>
+          </label>
+          <fieldset class="choice-fieldset">
+            <legend>Has your spouse or former spouse ever served in a branch of the Uniformed Services? (If Yes, complete a–d)</legend>
+            <div class="choice-row">
+              <label><input type="radio" name="spouse.servedUniformedServices" value="yes" data-fillink="spouse.servedUniformedServices"> Yes</label>
+              <label><input type="radio" name="spouse.servedUniformedServices" value="no" data-fillink="spouse.servedUniformedServices"> No</label>
+            </div>
+          </fieldset>
+          <label class="field">a. Spouse's DoD ID Number
+            <input type="text" data-fillink="spouse.dodId" data-fillink-required-when="spouse.servedUniformedServices=yes" data-fillink-digits="10" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" autocomplete="off" title="Enter the 10-digit DoD ID without spaces or punctuation.">
+          </label>
+          <label class="field">b. Spouse's Branch of Service
+            <input type="text" data-fillink="spouse.branchOfService" autocomplete="off">
+          </label>
+          <label class="field">c. Date Spouse Last Entered Service (YYYYMMDD)
+            <input type="text" data-fillink="spouse.lastEnteredServiceDate" inputmode="numeric" pattern="[0-9]{8}" maxlength="8" placeholder="YYYYMMDD">
+          </label>
+          <label class="field">d. Date Spouse Last Separated Service (YYYYMMDD)
+            <input type="text" data-fillink="spouse.lastSeparatedServiceDate" inputmode="numeric" pattern="[0-9]{8}" maxlength="8" placeholder="YYYYMMDD">
+          </label>
+        </div>
+      </section>
+
+      <section class="dependents-section" aria-labelledby="dependents-heading">
+        <h2 id="dependents-heading">12. Other Dependent Information</h2>
+        <p>Children and secondary dependents. Additional dependents will be listed on additional forms.</p>
+        <div class="dependent-table-wrap">
+          <table class="fillink-table">
+            <thead><tr><th scope="col" aria-label="Dependent number"></th><th scope="col">Name</th><th scope="col">Physical Address</th><th scope="col">Relationship</th><th scope="col">Date of Birth<br>(YYYYMMDD)</th><th scope="col">Physical Custody</th><th scope="col">Legal Custody</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">1</th><td><input aria-label="Dependent 1 name" data-fillink="dependents.0.name"></td><td><input aria-label="Dependent 1 physical address" data-fillink="dependents.0.physicalAddress"></td><td><input aria-label="Dependent 1 relationship" data-fillink="dependents.0.relationship"></td><td><input aria-label="Dependent 1 date of birth" data-fillink="dependents.0.dateOfBirth" inputmode="numeric" pattern="[0-9]{8}" maxlength="8"></td><td class="custody-cell"><input class="custody-check" type="checkbox" aria-label="Dependent 1 has physical custody" data-fillink="dependents.0.physicalCustody"></td><td class="custody-cell"><input class="custody-check" type="checkbox" aria-label="Dependent 1 has legal custody" data-fillink="dependents.0.legalCustody"></td></tr>
+              <tr><th scope="row">2</th><td><input aria-label="Dependent 2 name" data-fillink="dependents.1.name"></td><td><input aria-label="Dependent 2 physical address" data-fillink="dependents.1.physicalAddress"></td><td><input aria-label="Dependent 2 relationship" data-fillink="dependents.1.relationship"></td><td><input aria-label="Dependent 2 date of birth" data-fillink="dependents.1.dateOfBirth" inputmode="numeric" pattern="[0-9]{8}" maxlength="8"></td><td class="custody-cell"><input class="custody-check" type="checkbox" aria-label="Dependent 2 has physical custody" data-fillink="dependents.1.physicalCustody"></td><td class="custody-cell"><input class="custody-check" type="checkbox" aria-label="Dependent 2 has legal custody" data-fillink="dependents.1.legalCustody"></td></tr>
+              <tr><th scope="row">3</th><td><input aria-label="Dependent 3 name" data-fillink="dependents.2.name"></td><td><input aria-label="Dependent 3 physical address" data-fillink="dependents.2.physicalAddress"></td><td><input aria-label="Dependent 3 relationship" data-fillink="dependents.2.relationship"></td><td><input aria-label="Dependent 3 date of birth" data-fillink="dependents.2.dateOfBirth" inputmode="numeric" pattern="[0-9]{8}" maxlength="8"></td><td class="custody-cell"><input class="custody-check" type="checkbox" aria-label="Dependent 3 has physical custody" data-fillink="dependents.2.physicalCustody"></td><td class="custody-cell"><input class="custody-check" type="checkbox" aria-label="Dependent 3 has legal custody" data-fillink="dependents.2.legalCustody"></td></tr>
+              <tr><th scope="row">4</th><td><input aria-label="Dependent 4 name" data-fillink="dependents.3.name"></td><td><input aria-label="Dependent 4 physical address" data-fillink="dependents.3.physicalAddress"></td><td><input aria-label="Dependent 4 relationship" data-fillink="dependents.3.relationship"></td><td><input aria-label="Dependent 4 date of birth" data-fillink="dependents.3.dateOfBirth" inputmode="numeric" pattern="[0-9]{8}" maxlength="8"></td><td class="custody-cell"><input class="custody-check" type="checkbox" aria-label="Dependent 4 has physical custody" data-fillink="dependents.3.physicalCustody"></td><td class="custody-cell"><input class="custody-check" type="checkbox" aria-label="Dependent 4 has legal custody" data-fillink="dependents.3.legalCustody"></td></tr>
+              <tr><th scope="row">5</th><td><input aria-label="Dependent 5 name" data-fillink="dependents.4.name"></td><td><input aria-label="Dependent 5 physical address" data-fillink="dependents.4.physicalAddress"></td><td><input aria-label="Dependent 5 relationship" data-fillink="dependents.4.relationship"></td><td><input aria-label="Dependent 5 date of birth" data-fillink="dependents.4.dateOfBirth" inputmode="numeric" pattern="[0-9]{8}" maxlength="8"></td><td class="custody-cell"><input class="custody-check" type="checkbox" aria-label="Dependent 5 has physical custody" data-fillink="dependents.4.physicalCustody"></td><td class="custody-cell"><input class="custody-check" type="checkbox" aria-label="Dependent 5 has legal custody" data-fillink="dependents.4.legalCustody"></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="certification" aria-labelledby="certification-heading">
+        <h2 id="certification-heading">13. Certification of Dependent Support</h2>
+        <div class="cert-row"><input class="initial-field" type="text" aria-label="Initial certification 1" data-fillink="supportCertificationInitials.0" maxlength="8"><p>Read and Initial: I understand that the legal purpose of a housing allowance on behalf of a dependent is to partially reimburse a Service Member for the expense of providing a private sector residence for the dependents when Government Quarters are not provided. I further understand that a housing allowance for a dependent is not a bonus merely for the technical status of being married or a parent.</p></div>
+        <div class="cert-row"><input class="initial-field" type="text" aria-label="Initial certification 2" data-fillink="supportCertificationInitials.1" maxlength="8"><p>Read and Initial: I further understand that I am required to provide adequate support to those dependents on whose behalf I am receiving a housing allowance and if I fail to provide adequate support, the housing allowance that I received for that dependent will be recouped for nonsupport or inadequate support periods.</p></div>
+        <div class="cert-row"><input class="initial-field" type="text" aria-label="Initial certification 3" data-fillink="supportCertificationInitials.2" maxlength="8"><p>Read and Initial: I understand that a legal separation agreement, court decree, judgment, or order that does not state the dependent support amount, or absolves me of my dependent support responsibility, does not of itself affect my housing allowance. I further understand that if I am authorized a housing allowance on behalf of a dependent that I must contribute to my dependent's support in an amount that is not less than the applicable BAH-DIFF rate.</p></div>
+        <div class="cert-row"><input class="initial-field" type="text" aria-label="Initial certification 4" data-fillink="supportCertificationInitials.3" maxlength="8"><p>Read and Initial: I understand that if there is a court order or legal separation agreement stating the support amount, I must contribute to the dependent's support the amount specified therein, but in no case may the support payments be less than the applicable BAH-DIFF rate.</p></div>
+        <div class="cert-row"><input class="initial-field" type="text" aria-label="Initial certification 5" data-fillink="supportCertificationInitials.4" maxlength="8"><p>Read and Initial: I certify that I provide or am willing to provide adequate support to the above named dependents.</p></div>
+      </section>
+
+      <section class="attestation">
+        <p><strong>I certify ALL information regarding this authorization is correct. I will immediately notify the servicing Finance/Personnel Office of any changes in the information above, due to divorce, marriage, death, living in government quarters, etc., which could affect my BAH entitlement.</strong></p>
+        <p><strong>IMPORTANT:</strong> Making a false statement or claim against the US Government is punishable by courts-martial. The penalty for willfully making a false claim or a false statement in connection with claims is a maximum fine of $10,000 or imprisonment for 5 years, or both.</p>
+      </section>
+
+      <section class="signatures" aria-label="Signature blocks">
+        <div class="signature-block">
+          <h2>14. Member's Signature</h2>
+          <p class="signature-status">CAC/PIV digital signing is not implemented in this demo.</p>
+          <button type="button" disabled title="Certificate signing is not implemented">Sign with CAC/PIV</button>
+          <label>15. Date (YYYYMMDD)<input type="text" data-fillink="memberSignatureDate" inputmode="numeric" pattern="[0-9]{8}" maxlength="8"></label>
+        </div>
+        <div class="signature-block">
+          <h2>16. Commander's Signature</h2>
+          <p class="signature-status">CAC/PIV digital signing is not implemented in this demo.</p>
+          <button type="button" disabled title="Certificate signing is not implemented">Sign with CAC/PIV</button>
+          <label>17. Date (YYYYMMDD)<input type="text" data-fillink="commanderSignatureDate" inputmode="numeric" pattern="[0-9]{8}" maxlength="8"></label>
+        </div>
+      </section>
+
+      <footer class="form-footer">
+        <strong>DA FORM 5960, OCT 2026</strong>
+        <span>PREVIOUS EDITIONS ARE OBSOLETE.</span>
+      </footer>
+    </form>
+  </main>
+</body>
+</html>

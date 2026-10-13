@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fillink</title>
+  <link rel="stylesheet" href="../assets/fillink-base.css">
+  <link rel="stylesheet" href="app.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <a class="brand" href="./">Fillink</a>
+    <p>Portable form data, rendered with its versioned HTML template.</p>
+    <button id="change-template" type="button" hidden>Choose another form</button>
+  </header>
+
+  <main class="app-main">
+    <section id="launcher" class="app-panel" aria-labelledby="welcome-heading">
+      <h1 id="welcome-heading">Open or start a form</h1>
+      <p>Choose a template to start a blank submission, or open a Fillink JSON file. Data stays in this browser and is not uploaded. <a href="?submission=../examples/da-form-705-aft.json">Try the DA Form 705-AFT example data</a>.</p>
+      <div class="launch-actions">
+        <label for="template-picker">Template
+          <select id="template-picker"></select>
+        </label>
+        <button id="create-form" type="button">New form</button>
+      </div>
+      <label id="drop-zone" class="drop-zone" for="submission-file" tabindex="0">
+        <strong>Drop a Fillink JSON file here</strong>
+        <span>or choose a file</span>
+        <span class="choose-file">Choose JSON file</span>
+      </label>
+      <input id="submission-file" type="file" accept="application/json,.json">
+      <output id="app-status" role="status" aria-live="polite">Ready.</output>
+    </section>
+
+    <section id="workspace" hidden aria-label="Fillink form workspace">
+      <nav id="app-toolbar" class="toolbar app-toolbar" aria-label="Submission tools"></nav>
+      <p id="template-notice" class="template-notice"></p>
+      <div id="template-host"></div>
+    </section>
+  </main>
+  <footer class="app-footer">Local prototype. Template HTML is resolved from Fillink's trusted allowlist; arbitrary template URIs are never fetched.</footer>
+</body>
+</html>

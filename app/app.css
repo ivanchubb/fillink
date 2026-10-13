@@ -1,0 +1,39 @@
+* { box-sizing: border-box; }
+:root { font-family: system-ui, Arial, sans-serif; color: #17202a; background: #eef2f5; }
+body { margin: 0; }
+.app-header { display: flex; align-items: baseline; gap: 1rem; padding: 1rem max(1.25rem, calc((100% - 1100px) / 2)); background: #15334b; color: white; }
+.app-header p { margin: .25rem 0; }
+.brand { color: white; font-size: 1.35rem; font-weight: 700; text-decoration: none; }
+.app-main { max-width: 1200px; margin: 1.5rem auto; padding: 0 1rem; }
+.app-panel { padding: 1.5rem; border: 1px solid #c2ccd5; border-radius: .6rem; background: white; box-shadow: 0 3px 14px #16233012; }
+.app-panel h1 { margin: 0 0 .5rem; }
+.launch-actions { display: flex; align-items: end; gap: .75rem; margin: 1rem 0; }
+.launch-actions label { display: flex; flex-direction: column; gap: .25rem; }
+.launch-actions select { min-width: 18rem; padding: .45rem; font: inherit; }
+.app-panel button, .app-toolbar button, .choose-file { padding: .5rem .9rem; border: 1px solid #617386; border-radius: .25rem; color: #18344b; background: white; font: inherit; cursor: pointer; }
+.app-panel button:hover, .app-toolbar button:hover { background: #edf4fa; }
+.drop-zone { display: flex; min-height: 10rem; flex-direction: column; justify-content: center; align-items: center; gap: .6rem; margin-top: 1rem; border: 2px dashed #8295a5; border-radius: .5rem; background: #f8fafc; text-align: center; cursor: pointer; }
+.drop-zone:focus, .drop-zone.drag-over { outline: 3px solid #3578b5; outline-offset: 2px; background: #edf5fb; }
+.choose-file { color: white; background: #164b75; }
+#submission-file { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+#app-status { display: block; min-height: 1.5em; margin-top: .8rem; color: #33485b; }
+.app-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; padding: .65rem; border-bottom: 1px solid #c8d0d9; background: white; }
+.app-toolbar output { margin-left: auto; color: #345; }
+#load-submission { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+.button-label { display: inline-block; padding: .45rem .8rem; border: 1px solid #617386; border-radius: .25rem; color: #18344b; background: white; font: inherit; cursor: pointer; }
+#template-host { background: white; }
+#template-host > .fillink-template { min-height: 4rem; }
+.template-notice { margin: .5rem 0; padding: .5rem .75rem; border-left: 3px solid #9a6724; color: #59421f; background: #fff8e8; font-size: .85rem; }
+.app-footer { max-width: 1100px; margin: 1rem auto; padding: 0 1rem; color: #52616e; font-size: .85rem; }
+@media print {
+  .app-header, #launcher, .app-toolbar, .app-footer { display: none !important; }
+  .app-main { max-width: none; margin: 0; padding: 0; }
+}
+@media (max-width: 700px) {
+  .app-header { display: block; }
+  .app-main { margin: .75rem auto; padding: 0 .5rem; }
+  .app-panel { padding: 1rem; }
+  .launch-actions { align-items: stretch; flex-direction: column; }
+  .launch-actions select { min-width: 0; }
+  .app-toolbar output { margin-left: 0; width: 100%; }
+}

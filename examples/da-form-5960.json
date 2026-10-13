@@ -1,0 +1,43 @@
+{
+  "$schema": "../spec/submission.schema.json",
+  "formatVersion": "0.1.0",
+  "id": "2b5c8f47-31e1-4ad1-9c56-e17b06704848",
+  "createdAt": "2026-01-01T00:00:00Z",
+  "template": {
+    "uri": "https://forms.example.org/fillink/da-form-5960",
+    "version": "2022-01.1"
+  },
+  "locked": false,
+  "data": {
+    "member": {
+      "name": "Example, Alex Q.",
+      "dodId": "0000000000",
+      "grade": "E6",
+      "physicalAddress": "123 Example Street, Sample City, VA 00000",
+      "dutyLocation": "Example Unit, Sample City, VA 00000",
+      "effectiveDate": "20260101"
+    },
+    "actionType": "start",
+    "bahType": "withDependents",
+    "maritalStatus": "married",
+    "spouse": {
+      "name": "Example, Sam R.",
+      "physicalAddress": "123 Example Street, Sample City, VA 00000",
+      "servedUniformedServices": "no",
+      "dodId": "",
+      "branchOfService": "",
+      "lastEnteredServiceDate": "",
+      "lastSeparatedServiceDate": ""
+    },
+    "dependents": [
+      {"name": "Example Child", "physicalAddress": "123 Example Street, Sample City, VA 00000", "relationship": "Child", "dateOfBirth": "20200101", "physicalCustody": true, "legalCustody": true},
+      {"name": "", "physicalAddress": "", "relationship": "", "dateOfBirth": "", "physicalCustody": false, "legalCustody": false},
+      {"name": "", "physicalAddress": "", "relationship": "", "dateOfBirth": "", "physicalCustody": false, "legalCustody": false},
+      {"name": "", "physicalAddress": "", "relationship": "", "dateOfBirth": "", "physicalCustody": false, "legalCustody": false},
+      {"name": "", "physicalAddress": "", "relationship": "", "dateOfBirth": "", "physicalCustody": false, "legalCustody": false}
+    ],
+    "supportCertificationInitials": ["", "", "", "", ""],
+    "memberSignatureDate": "",
+    "commanderSignatureDate": ""
+  }
+}
